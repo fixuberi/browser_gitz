@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'git_users/show'
   root to: 'home#index'
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signin' => 'sessions#new', :as => :signin

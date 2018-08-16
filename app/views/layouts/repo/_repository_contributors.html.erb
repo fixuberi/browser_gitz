@@ -1,4 +1,4 @@
 <h1>Contributors:</h1>
 <% repository.rels[:contributors].get.data.each do |contr| %>
-  <p><%= link_to contr.login, contr.html_url %></p>
+  <p><%= link_to contr.login, git_users_show_path(:name => contr.login) %></p>
 <% end %>

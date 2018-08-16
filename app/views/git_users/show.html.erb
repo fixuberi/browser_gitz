@@ -1,0 +1,6 @@
+<h1><%= @user.name %></h1>
+<%= image_tag @user.avatar_url %>
+<p><%= @user.login %></p>
+<p>Company: <%= @user.company %></p>
+<p>Blog: <%= link_to @user.blog, @user.blog %></p>
+<p>Followers: <%= @user.followers %></p>
