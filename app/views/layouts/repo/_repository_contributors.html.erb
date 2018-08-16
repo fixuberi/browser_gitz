@@ -1,0 +1,4 @@
+<h1>Contributors:</h1>
+<% repository.rels[:contributors].get.data.each do |contr| %>
+  <p><%= link_to contr.login, contr.html_url %></p>
+<% end %>
