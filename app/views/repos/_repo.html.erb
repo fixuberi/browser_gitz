@@ -6,4 +6,7 @@
   </p>
   <p> <%= repo.description %></p>
   <p>watchers: <%= repo.watchers %>     forks: <%= repo.forks %></p>
+  
+  <%= link_to "Like", likes_path(entity_id: repo.id, entity_type: "repo"), method: :post, remote: true %>
+  <%= link_to "Unlike", likes_path(entity_id: repo.id, entity_type: "repo"), method: :delete, remote: true %>
 </div>
