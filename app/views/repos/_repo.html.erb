@@ -1,6 +1,6 @@
 <div style="border: 1px solid blue; margin-bottom: 5px">
   <p>
-    <%= link_to repo.name, repos_show_path("#{repo.full_name}") %>/
+    <%= link_to repo.name, repos_show_path(full_name: "#{repo.full_name}") %>/
     <%= link_to repo.homepage, repo.homepage %>/
     <%= link_to repo.owner.login, git_users_show_path(:name => repo.owner.login) %>
   </p>

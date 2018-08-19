@@ -1,7 +1,7 @@
 class ReposController < ApplicationController
 
   def show
-
+    @repository = client.repo params[:full_name]
   end
 
   def index
