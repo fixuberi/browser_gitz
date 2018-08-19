@@ -1,0 +1,15 @@
+<% if @repos_facade.need_first_page? %>
+  <%= link_to "First", repos_path(q: @repos_facade.query, page: @repos_facade.first_page ) %>
+<% end %>
+<% if @repos_facade.need_prev_page? %>
+  <%= link_to "Prev", repos_path(q: @repos_facade.query, page: @repos_facade.prev_page ) %>
+<% end %>
+
+Page <%= @repos_facade.page %>
+
+<% if @repos_facade.need_next_page? %>
+  <%= link_to "Next", repos_path(q: @repos_facade.query, page: @repos_facade.next_page ) %>
+<% end %>
+<% if @repos_facade.need_last_page? %>
+  <%= link_to "Last", repos_path(q: @repos_facade.query, page: @repos_facade.last_page ) %>
+<% end %>
