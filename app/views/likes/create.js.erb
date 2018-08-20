@@ -1,0 +1,1 @@
+$("#like_<%= @like.entity_id %>").replaceWith('<%= j render 'layouts/like/unlike_link', id: @like.entity_id, type: @like.entity_type %>')

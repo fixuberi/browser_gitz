@@ -1,13 +1,20 @@
 class LikesController < ApplicationController
 
   def create
-    Like.create like_params
+    @like = Like.new like_params
+    @like.save
+    response do |format|
+      format.js
+    end
   end
 
   def destroy
     @like = Like.where(entity_type: like_params[:entity_type])
                 .find_by(entity_id: like_params[:entity_id])
     @like.destroy
+    response do |format|
+      format.js
+    end
   end
 
   private

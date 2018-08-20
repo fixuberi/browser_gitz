@@ -1,0 +1,5 @@
+<% if liked.include?(id.to_i) %>
+  <%= render 'layouts/like/unlike_link', id: id, type: type %>
+<% else %>
+  <%= render 'layouts/like/like_link', id: id, type: type %>
+<% end %>

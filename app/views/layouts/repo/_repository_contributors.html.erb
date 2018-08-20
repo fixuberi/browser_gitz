@@ -1,4 +1,7 @@
 <h1>Contributors:</h1>
-<% repository.rels[:contributors].get.data.each do |contr| %>
-  <p><%= link_to contr.login, git_users_show_path(:name => contr.login) %></p>
+<% @repository_facade.contributors.each do |contr| %>
+  <p>
+    <%= link_to contr.login, git_users_show_path(:name => contr.login) %>
+    <%= render 'layouts/like/like_toggle', id: contr.id, type: 'contrib', liked: @repository_facade.likes %>
+  </p>
 <% end %>

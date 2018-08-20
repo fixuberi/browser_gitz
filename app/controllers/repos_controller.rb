@@ -1,7 +1,7 @@
 class ReposController < ApplicationController
 
   def show
-    @repository = client.repo params[:full_name]
+    @repository_facade = RepositoryFacade.new(params[:full_name], client)
   end
 
   def index

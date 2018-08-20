@@ -1,6 +1,7 @@
-<h1><%= @user.name %></h1>
-<%= image_tag @user.avatar_url %>
-<p><%= @user.login %></p>
-<p>Company: <%= @user.company %></p>
-<p>Blog: <%= link_to @user.blog, @user.blog %></p>
-<p>Followers: <%= @user.followers %></p>
+<h1><%= @git_user_facade.user.name %></h1>
+<%= image_tag @git_user_facade.user.avatar_url %>
+<p><%= @git_user_facade.user.login %></p>
+<p>Company: <%= @git_user_facade.user.company %></p>
+<p>Blog: <%= link_to @git_user_facade.user.blog, @git_user_facade.user.blog %></p>
+<p>Followers: <%= @git_user_facade.user.followers %></p>
+<%= render 'layouts/like/like_toggle', id: @git_user_facade.user.id, type: 'contrib', liked: @git_user_facade.likes %>

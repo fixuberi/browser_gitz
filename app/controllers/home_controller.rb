@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
+
   def index
-    @repository = client.repo 'trailblazer/trailblazer'
+    @repository_facade = RepositoryFacade.new('trailblazer/trailblazer', client)
   end
+
 end

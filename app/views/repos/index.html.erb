@@ -1,6 +1,6 @@
 <p>For search term "<%= @repos_facade.query %>" found</p>
 <% @repos_facade.repo_items.each do |repo| %>
-  <%= render 'repos/repo', repo: repo %>
+  <%= render 'repos/repo', repo: repo, liked: @repos_facade.likes %>
 <% end %>
 <%= render 'repos_paginate_buttons' %>
 

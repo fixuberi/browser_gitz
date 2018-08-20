@@ -1,14 +1,14 @@
 
   class ReposFacade
 
-    attr_reader :query, :page, :client
+    attr_reader :query, :page, :client, :likes
 
     def initialize(params, client)
       @query  = params[:q]
       @page   = params[:page]
       @client = client
+      @likes  = Like.where(entity_type: "repo").pluck(:entity_id)
     end
-
 
     def current_page
       @page = (page || 1).to_i

@@ -1,6 +1,6 @@
 class GitUsersController < ApplicationController
   def show
-    @user = client.user params[:name]
+    @git_user_facade = GitUserFacade.new params[:name], client
   end
 
 end
