@@ -1,8 +1,16 @@
-<h1><%= repository.name %></h1>
-<p>Description: <%= repository.description %></p>
-<p>Watchers: <%= repository.watchers %></p>
-<p>Forks: <%= repository.forks %></p>
-<p>Open issues: <%= repository.open_issues %></p>
-<p>Homepage: <%= link_to repository.homepage, repository.homepage %></p>
-<p>GitHub repo: <%= link_to repository.svn_url, repository.svn_url %></p>
-<p>Created at: <%= repository.created_at %></p>
+<div class="card">
+  <div class="card-header">
+    <h4>
+      <%= repository.name %>
+    </h4>
+  </div>
+  <div class="card-body">
+    <p>Description: <%= repository.description %></p>
+    <p>Watchers: <%= repository.watchers %></p>
+    <p>Forks: <%= repository.forks %></p>
+    <p>Open issues: <%= repository.open_issues %></p>
+    <p>Homepage: <%= link_to repository.homepage, repository.homepage %></p>
+    <p>GitHub repo: <%= link_to repository.svn_url, repository.svn_url %></p>
+    <p>Created at: <%= repository.created_at %></p>
+  </div>
+</div>

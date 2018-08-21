@@ -1,13 +1,23 @@
-
-<h1>Contributors:</h1>
-  <% @repository_facade.contributors.each do |contr| %>
-    <div class="row">
-      <div class="col-4">
-        <%= link_to contr.login, git_users_show_path(:name => contr.login) %>
-      </div>
-      <div class="col">
-        <%= render 'layouts/like/like_toggle', id: contr.id, type: 'contrib', liked: @repository_facade.likes %>
-      </div>
-    </div>
-    </p>
-  <% end %>
+<div class="card">
+  <div class="card-header">
+    <h4>
+      Contributors:
+    </h4>
+  </div>
+  <div class="card-body">
+    <ul class="list-group">
+      <% @repository_facade.contributors.each do |contr| %>
+        <li class="list-group-item">
+          <div class="row justify-content-center">
+          <div class="col-3">
+            <%= link_to contr.login, git_users_show_path(:name => contr.login) %>
+          </div>
+          <div class="col-3">
+            <%= render 'layouts/like/like_toggle', id: contr.id, type: 'contrib', liked: @repository_facade.likes %>
+          </div>
+        </div>
+        </li>
+      <% end %>
+      </ul>
+  </div>
+</div>
