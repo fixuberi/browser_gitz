@@ -1,6 +1,14 @@
-<p>For search term "<%= @repos_facade.query %>" found</p>
+<p>For search term
+  <span class="badge badge-primary">
+    <%= @repos_facade.query %>
+  </span>
+   found:</p>
+
 <% @repos_facade.repo_items.each do |repo| %>
   <%= render 'repos/repo', repo: repo, liked: @repos_facade.likes %>
 <% end %>
-<%= render 'repos_paginate_buttons' %>
+
+<% if @repos_facade.repo_items.any? %>
+  <%= render 'repos_paginate_buttons' %>
+<% end %>
 

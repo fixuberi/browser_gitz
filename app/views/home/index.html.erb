@@ -1,2 +1,8 @@
-<%= render 'layouts/repo/repository_info', repository: @repository_facade.repository %>
-<%= render 'layouts/repo/repository_contributors' %>
+<div class="row">
+  <div class="col-6">
+    <%= render 'layouts/repo/repository_info', repository: @repository_facade.repository %>
+  </div>
+  <div class="col-6">
+    <%= render 'layouts/repo/repository_contributors' %>
+  </div>
+</div>

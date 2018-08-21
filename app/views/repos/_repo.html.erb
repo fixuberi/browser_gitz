@@ -1,11 +1,42 @@
-<div style="border: 1px solid blue; margin-bottom: 5px">
-  <p>
-    <%= link_to repo.name, repos_show_path(full_name: "#{repo.full_name}") %>/
-    <%= link_to repo.homepage, repo.homepage %>/
-    <%= link_to repo.owner.login, git_users_show_path(:name => repo.owner.login) %>
-  </p>
-  <p> <%= repo.description %></p>
-  <p>watchers: <%= repo.watchers %>     forks: <%= repo.forks %></p>
+<div class="card">
+    <div class="card-header">
+      <div class="row">
+        <dif class="col-4">
+          <h5 class="card-title">
+            <span class="label">Name:</span>
+            <%= link_to repo.name, repos_show_path(full_name: "#{repo.full_name}") %>
+          </h5>
+        </dif>
+        <dif class="col">
+          <h5 class="card-title">
+            <span class="label">Homepage:</span>
+            <%= link_to_if repo.homepage, repo.homepage, repo.homepage %>
+          </h5>
+        </dif>
+        <dif class="col-3">
+          <h5 class="card-title">
+            <span class="label">Owner:</span>
+            <%= link_to repo.owner.login, git_users_show_path(:name => repo.owner.login) %>
+          </h5>
+        </dif>
+      </div>
+    </div>
 
-  <%= render 'layouts/like/like_toggle', id: repo.id, type: 'repo', liked: liked %>
+  <div class="card-body">
+    <h6 class="card-subtitle mb-2 text-muted">
+      Description:<%= repo.description %>
+    </h6>
+
+      <div class="row">
+        <div class="col-4">
+          Watchers: <%= repo.watchers %>
+        </div>
+        <div class="col">
+          Forks: <%= repo.forks %>
+        </div>
+        <div class="col-1">
+          <%= render 'layouts/like/like_toggle', id: repo.id, type: 'repo', liked: liked %>
+        </div>
+      </div>
+  </div>
 </div>

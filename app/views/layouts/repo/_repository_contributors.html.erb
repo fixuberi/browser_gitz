@@ -1,7 +1,13 @@
+
 <h1>Contributors:</h1>
-<% @repository_facade.contributors.each do |contr| %>
-  <p>
-    <%= link_to contr.login, git_users_show_path(:name => contr.login) %>
-    <%= render 'layouts/like/like_toggle', id: contr.id, type: 'contrib', liked: @repository_facade.likes %>
-  </p>
-<% end %>
+  <% @repository_facade.contributors.each do |contr| %>
+    <div class="row">
+      <div class="col-4">
+        <%= link_to contr.login, git_users_show_path(:name => contr.login) %>
+      </div>
+      <div class="col">
+        <%= render 'layouts/like/like_toggle', id: contr.id, type: 'contrib', liked: @repository_facade.likes %>
+      </div>
+    </div>
+    </p>
+  <% end %>
