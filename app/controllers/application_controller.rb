@@ -9,7 +9,8 @@ class ApplicationController < ActionController::Base
   private
 
   def client
-    @client ||= Octokit::Client.new(access_token: current_user.access_token)
+    access_token = user_signed_in? ? current_user.access_token : nil
+    @client ||= Octokit::Client.new(access_token: access_token)
   end
 
   def current_user
