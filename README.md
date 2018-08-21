@@ -1,48 +1,25 @@
 Browser Gitz
 ================
+GitHub projects browser web app. This application interacts with GitHub API(https://developer.github.com/v3/). As the wrapper for the API  was used Octokit gem.
+This task was kindly provided by the MobiDev company.
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
 
-Rails Composer is supported by developers who purchase our RailsApps tutorials.
-
-Problems? Issues?
------------
-
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
-
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
-
-If the application doesn't work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
-
-Ruby on Rails
+Ruby version
 -------------
-
 This application requires:
 
-- Ruby 2.4.1
-- Rails 5.2.1
+ Ruby 2.4.1
 
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
-
-Getting Started
+Set up 
 ---------------
+First, install the gems required by the application:
 
-Documentation and Support
--------------------------
+    bundle
 
-Issues
--------------
+Next, execute the database migrations/schema setup:
 
-Similar Projects
-----------------
-
-Contributing
-------------
-
-Credits
--------
-
-License
--------
+	bundle exec rake db:setup
+  
+Start the app
+--------------
+    bundle exec rails server
