@@ -1,7 +1,23 @@
-<h1><%= @git_user_facade.user.name %></h1>
-<%= image_tag @git_user_facade.user.avatar_url %>
-<p><%= @git_user_facade.user.login %></p>
-<p>Company: <%= @git_user_facade.user.company %></p>
-<p>Blog: <%= link_to @git_user_facade.user.blog, @git_user_facade.user.blog %></p>
-<p>Followers: <%= @git_user_facade.user.followers %></p>
-<%= render 'layouts/like/like_toggle', id: @git_user_facade.user.id, type: 'contrib', liked: @git_user_facade.likes %>
+<div class="row">
+  <div class="col-3">
+    <div class="center">
+      <%= image_tag @git_user_facade.user.avatar_url, class:"img-thumbnail"%>
+      <%= render 'layouts/like/like_toggle', id: @git_user_facade.user.id, type: 'contrib', liked: @git_user_facade.likes %>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <div class="card-header">
+        <h4>
+          <%= @git_user_facade.user.name %>
+        </h4>
+      </div>
+      <div class="card-body">
+        <p>Login: <%= @git_user_facade.user.login %></p>
+        <p>Company: <%= @git_user_facade.user.company %></p>
+        <p>Blog: <%= link_to @git_user_facade.user.blog, @git_user_facade.user.blog %></p>
+        <p>Followers: <%= @git_user_facade.user.followers %></p>
+      </div>
+    </div>
+  </div>
+</div>
