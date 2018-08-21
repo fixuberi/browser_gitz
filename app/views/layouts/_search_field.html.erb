@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <%= form_tag(repos_path, method: :get) do %>
-    <%= text_field_tag :q, params[:q] %>
+    <%= text_field_tag :q, params[:q], placeholder:'Search...' %>
     <%= submit_tag 'Search', name: nil %>
   <% end %>
 <% end %>

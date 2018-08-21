@@ -9,7 +9,7 @@
       <% @repository_facade.contributors.each do |contr| %>
         <li class="list-group-item">
           <div class="row justify-content-center">
-          <div class="col-3">
+          <div class="col-4">
             <%= link_to contr.login, git_users_show_path(:name => contr.login) %>
           </div>
           <div class="col-3">
